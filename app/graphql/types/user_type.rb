@@ -1,7 +1,6 @@
-module Types
-  class UserType < Types::BaseObject
-    field :username, String, null: false
-    field :age, Integer, null: false
-    field :name, String, null: false
-  end
+Types::UserType = GraphQL::ObjectType.define do
+  name "User"
+  field :username, !types.String
+  field :age, !types.Int
+  field :name, !types.String
 end
