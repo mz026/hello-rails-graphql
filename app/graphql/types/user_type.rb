@@ -3,4 +3,6 @@ Types::UserType = GraphQL::ObjectType.define do
   field :username, !types.String
   field :age, !types.Int
   field :name, !types.String
+
+  field :posts, types[Types::PostType]
 end
