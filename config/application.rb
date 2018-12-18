@@ -18,7 +18,7 @@ module GraphSvr
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'localhost:8000'
+        origins 'localhost:3001'
         resource '*', :headers => :any,
                       :credentials => true,
                       :methods => [ :get, :post, :put, :delete, :patch, :options ]

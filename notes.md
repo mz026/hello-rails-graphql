@@ -10,3 +10,6 @@
   - do it in `GraphqlController`
 - [ ] newrelic
 
+## Others
+
+- mutation APIs should go through REST API as they may involves side effects
