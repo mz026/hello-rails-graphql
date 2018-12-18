@@ -2,7 +2,7 @@
 
 - [x] search by id
 - [x] query association
-- [ ] resource counts
+- [x] resource counts
 - [ ] eager load association
 - [ ] query condition
 - [ ] auth

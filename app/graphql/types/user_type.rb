@@ -5,4 +5,9 @@ Types::UserType = GraphQL::ObjectType.define do
   field :name, !types.String
 
   field :posts, types[Types::PostType]
+  field :posts_count, !types.Int do
+    resolve -> (obj, arg, ctx) {
+      obj.posts.count
+    }
+  end
 end

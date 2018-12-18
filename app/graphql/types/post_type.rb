@@ -7,5 +7,10 @@ module Types
     name "Post"
     field :title, !types.String
     field :comments, types[Types::CommentType]
+    field :comments_count, !types.Int do
+      resolve -> (obj, arg, ctx) {
+        obj.comments.count
+      }
+    end
   end
 end
