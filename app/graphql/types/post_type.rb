@@ -12,7 +12,7 @@ module Types
     end
     field :comments_count, !types.Int do
       resolve -> (obj, arg, ctx) {
-        obj.comments.count
+        AssociationCountLoader.for(:comments, :post_id).load(obj.id)
       }
     end
     field :user, Types::UserType do

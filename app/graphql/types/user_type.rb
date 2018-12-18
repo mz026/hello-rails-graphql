@@ -8,8 +8,7 @@ Types::UserType = GraphQL::ObjectType.define do
   field :posts, types[Types::PostType]
   field :posts_count, !types.Int do
     resolve -> (obj, arg, ctx) {
-      PostCountLoader.for.load(obj.id)
-      # obj.posts.count
+      AssociationCountLoader.for(:posts, :user_id).load(obj.id)
     }
   end
 end
