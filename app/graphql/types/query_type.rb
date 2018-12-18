@@ -7,4 +7,10 @@ Types::QueryType = GraphQL::ObjectType.define do
       User.find(args[:id])
     }
   end
+
+  field :posts, types[Types::PostType] do
+    resolve -> (obj, args, ctx) {
+      Post.all
+    }
+  end
 end
